@@ -3,11 +3,11 @@
 ---
 @charset "utf-8";
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$tablet:          600px;
+$desktop:        800px;
 
-@mixin screen($device) {
-    @media screen and (max-width: $device) {
+@mixin screen($size) {
+    @media screen and (min-width: $size) {
         @content;
     }
 }
@@ -102,6 +102,7 @@ a {
 .dice {
   width: 100vw;
   height: 0;
+  min-height: 100vh;
   padding-bottom: 100%;
   position: relative;
   transform-style: preserve-3d;
@@ -119,8 +120,12 @@ a {
     @include mod('one') {
       transform: rotateY(0deg) translateZ(100vw);
       color: white;
-      padding: 100px;
-      padding-right: 40%;
+      padding: 40px;
+
+      @include screen($tablet) {
+        padding: 100px;
+        padding-right: 40%;
+      }
     }
 
     @include mod('two') {

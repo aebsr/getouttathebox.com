@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="dice dice--show-one">
+      <section class="dice__face dice__face--one">
+        {% include about.html %}
+      </section>
+      <div class="dice__face dice__face--two">
+
+      </div>
+      <div class="dice__face dice__face--three">
+
+      </div>
+      <div class="dice__face dice__face--four">
+
+      </div>
+      <div class="dice__face dice__face--five">
+
+      </div>
+      <div class="dice__face dice__face--six">
+
+      </div>
+    </div>
+
+    <script>
+      var cube = document.querySelector('.dice');
+      var radioGroup = document.querySelector('.shoot');
+      var currentClass = '';
+
+      function changeSide() {
+        console.log('help');
+        var checkedRadio = radioGroup.querySelector(':checked');
+        var showClass = 'dice--show-' + checkedRadio.value;
+        if ( currentClass ) {
+          cube.classList.remove( currentClass );
+        }
+        cube.classList.add( showClass );
+        currentClass = showClass;
+      }
+      // set initial side
+      changeSide();
+
+      radioGroup.addEventListener( 'change', changeSide );
+    </script>
+
+  </body>
+
+</html>

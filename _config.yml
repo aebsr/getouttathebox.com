@@ -3,7 +3,7 @@ title: Get Outta The Box - Antoine Butler
 email: hi@getouttathebox.com
 description: > # this means to ignore newlines until "baseurl:"
   The chronicles of a wanderlusting, remote worker and fitnesses junky. Sharing
-  philosopical musings on my never ending search for work-life balance.
+  philosophical musings on my never ending search for work-life balance.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://getouttathebox.com" # the base hostname & protocol for your site
 twitter_username: aebsr

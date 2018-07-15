@@ -12,6 +12,18 @@ $desktop:        800px;
     }
 }
 
+@mixin el($el) {
+  &__#{$el} {
+    @content;
+  }
+}
+
+@mixin mod($mod) {
+  &--#{$mod} {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -41,9 +53,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
 ol, ul {
 	list-style: none;
 }
@@ -58,18 +67,6 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-
-@mixin el($el) {
-  &__#{$el} {
-    @content;
-  }
-}
-
-@mixin mod($mod) {
-  &--#{$mod} {
-    @content;
-  }
 }
 
 body {
@@ -114,7 +111,8 @@ a {
     width: 100%;
     height: 100%;
     align-items: center;
-    overflow: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     background-color: #222;
 
     @include mod('one') {
